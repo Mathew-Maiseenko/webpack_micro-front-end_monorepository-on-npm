@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="index.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<header class="head">To-do list</header>
+		<nav class="navigation">
+			<button class="navigation__clear-todos">очистить</button>
+			<button class="navigation__theme-change">смена темы</button>
+		</nav>
+		<main class="to-do-list">
+			<section class="to-do-list__to-do-constructor">
+				<input class="to-do-list__new-to-do-name-input" type="text" />
+				<button class="to-do-list__adding-button">add task</button>
+			</section>
+			<h3 class="to-do-list__empty-message">To-do list is empty now</h3>
+		</main>
+		<ul class="list">
+			<li>1</li>
+			<li>
+				<ul>
+					<li>2.1</li>
+					<li>2.2</li>
+					<li>2.3</li>
+					<li>2.4</li>
+					<li>2.5</li>
+				</ul>
+			</li>
+			<li>3</li>
+		</ul>
+		<div id="root"></div>
+	</body>
+</html>

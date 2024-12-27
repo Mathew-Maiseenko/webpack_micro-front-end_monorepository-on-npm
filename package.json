@@ -1,0 +1,24 @@
+{
+	"name": "webpack_micro-front-end_monorepository",
+	"version": "1.0.0",
+	"workspaces": {
+		"packages": [
+			"packages/*",
+			"services/*"
+		],
+		"nohoist": [
+			"**/concurrently"
+		]
+	},
+	"dependencies": {
+		"concurrently": "^9.1.0"
+	},
+	"scripts": {
+		"create-file": "cd tools && node creating-microfrontend.js --env __NAME_OF_NEW_MICROFRONTEND__=!!!PUT_NAME_OF_NEW_MICROFRONTEND_HERE && node replaceJson.js/ --env __NAME_OF_NEW_MICROFRONTEND__=!!!PUT_NAME_OF_NEW_MICROFRONTEND_HERE",
+		"start:host": "cd services/host && npm run start",
+		"start:about": "cd services/about && npm run start",
+		"start:shop": "cd services/shop && npm run start",
+		"dev": "webpack serve --env mode=development",
+		"start": "concurrently \"npm run start:shop\" \"npm run start:about\" \"npm run start:host\""
+	}
+}
